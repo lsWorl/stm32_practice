@@ -28,6 +28,6 @@
 .\objects\main.o: .\Library\stm32f10x_usart.h
 .\objects\main.o: .\Library\stm32f10x_wwdg.h
 .\objects\main.o: .\Library\misc.h
-.\objects\main.o: .\Hardware\OLED.h
-.\objects\main.o: D:\Keil_stm32\ARM\ARMCC\Bin\..\include\math.h
-.\objects\main.o: D:\Keil_stm32\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: .\Hardware\gpio.h
+.\objects\main.o: .\Hardware\pwm.h
+.\objects\main.o: .\Hardware\servo.h
