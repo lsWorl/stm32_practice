@@ -30,3 +30,4 @@
 .\objects\button.o: .\Library\stm32f10x_wwdg.h
 .\objects\button.o: .\Library\misc.h
 .\objects\button.o: Hardware\pin_config.h
+.\objects\button.o: .\Middlewares\delay.h

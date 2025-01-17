@@ -1,9 +1,9 @@
 #include "stm32f10x.h"
 #include "OLED_Font.h"
-
+#include "pin_config.h"
 /*引脚配置*/
-#define OLED_W_SCL(x)		GPIO_WriteBit(GPIOB, GPIO_Pin_8, (BitAction)(x))
-#define OLED_W_SDA(x)		GPIO_WriteBit(GPIOB, GPIO_Pin_9, (BitAction)(x))
+#define OLED_W_SCL(x)		GPIO_WriteBit(OLED_PORT, OLED_SCL_PIN, (BitAction)(x))
+#define OLED_W_SDA(x)		GPIO_WriteBit(OLED_PORT, OLED_SDA_PIN, (BitAction)(x))
 
 /*引脚初始化*/
 void OLED_I2C_Init(void)
@@ -14,11 +14,9 @@ void OLED_I2C_Init(void)
 	
  	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;
- 	GPIO_Init(GPIOB, &GPIO_InitStructure);
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;
- 	GPIO_Init(GPIOB, &GPIO_InitStructure);
-	
+	GPIO_InitStructure.GPIO_Pin = OLED_SCL_PIN|OLED_SDA_PIN;
+	GPIO_Init(OLED_PORT, &GPIO_InitStructure);
+
 	OLED_W_SCL(1);
 	OLED_W_SDA(1);
 }

@@ -1,1 +1,1 @@
-.\objects\i2c.o: Hardware\i2c\i2c.c
+.\objects\i2c.o: Middlewares\i2c.c

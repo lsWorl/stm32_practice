@@ -7,6 +7,8 @@
                 "d:\\Study\\stm32Project\\demo\\Library",
                 "d:\\Study\\stm32Project\\demo\\User",
                 "d:\\Study\\stm32Project\\demo\\Hardware",
+                "d:\\Study\\stm32Project\\demo\\Middlewares",
+                "d:\\Study\\stm32Project\\demo\\Application",
                 "D:\\Keil_stm32\\ARM\\ARMCC\\include",
                 "D:\\Keil_stm32\\ARM\\ARMCC\\include\\rw"
             ],

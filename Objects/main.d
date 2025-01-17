@@ -28,6 +28,8 @@
 .\objects\main.o: .\Library\stm32f10x_usart.h
 .\objects\main.o: .\Library\stm32f10x_wwdg.h
 .\objects\main.o: .\Library\misc.h
-.\objects\main.o: .\Hardware\gpio.h
-.\objects\main.o: .\Hardware\pwm.h
-.\objects\main.o: .\Hardware\servo.h
+.\objects\main.o: .\Hardware\led.h
+.\objects\main.o: .\Hardware\pin_config.h
+.\objects\main.o: .\Hardware\OLED.h
+.\objects\main.o: .\Middlewares\delay.h
+.\objects\main.o: .\Hardware\button.h
