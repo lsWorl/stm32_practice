@@ -33,3 +33,4 @@
 .\objects\main.o: .\Hardware\OLED.h
 .\objects\main.o: .\Middlewares\delay.h
 .\objects\main.o: .\Hardware\button.h
+.\objects\main.o: .\Hardware\beeper.h

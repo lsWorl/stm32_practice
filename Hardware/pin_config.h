@@ -40,7 +40,7 @@
 
 // °´Å¥Òý½Å
 #define BTN1_PIN            GPIO_Pin_5  // PA5
-#define BTN2_PIN            GPIO_Pin_6  // PA6
+#define BTN2_PIN            GPIO_Pin_7  // PA7
 #define BTN3_PIN            GPIO_Pin_1  // PB1
 #define BTN4_PIN            GPIO_Pin_12  // PB12
 

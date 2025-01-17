@@ -4,22 +4,22 @@
 #include "stm32f10x.h"
 #include "pin_config.h"
 
-// 按键状态定义
+// 按键逻辑状态定义
 typedef enum {
-    BTN_RELEASED = 0,    // 按键释放
-    BTN_PRESSED,         // 按键按下
-    BTN_SHORT_PRESSED,   // 短按
-    BTN_LONG_PRESSED     // 长按
+    BTN_IDLE = 0,       // 空闲状态
+    BTN_DEBOUNCE,       // 消抖状态
+    BTN_SHORT_PRESS,    // 短按状态
+    BTN_LONG_PRESS      // 长按状态
 } ButtonState;
 
-// 按键ID定义
+// 按键编号定义
 typedef enum {
-    BTN1 = 0,   // 模式切换按键
-    BTN2,       // 参数确认按键
-    BTN3,       // 报警确认按键
-    BTN4,       // 系统复位按键
-    BTN_COUNT   // 按键总数
-} ButtonID;
+    KEY_MODE = 0,   // 模式切换按键 (BTN1)
+    KEY_CONFIRM,    // 确认按键 (BTN2)
+    KEY_ALARM,      // 报警确认按键 (BTN3)
+    KEY_RESET,      // 复位按键 (BTN4)
+    KEY_COUNT       // 按键总数
+} KeyID;
 
 // 按键初始化
 void Button_Init(void);
@@ -28,12 +28,9 @@ void Button_Init(void);
 void Button_Scan(void);
 
 // 获取按键状态
-ButtonState Button_GetState(ButtonID btnId);
+ButtonState Button_GetState(KeyID key);
 
 // 清除按键状态
-void Button_ClearState(ButtonID btnId);
-
-// 按键中断处理函数（在中断服务程序中调用）
-void Button_EXTI_IRQHandler(ButtonID btnId);
+void Button_ClearState(KeyID key);
 
 #endif
