@@ -34,3 +34,4 @@
 .\objects\main.o: .\Middlewares\delay.h
 .\objects\main.o: .\Hardware\button.h
 .\objects\main.o: .\Hardware\beeper.h
+.\objects\main.o: .\Hardware\light_sensor.h
