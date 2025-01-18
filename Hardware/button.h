@@ -3,7 +3,7 @@
 
 #include "stm32f10x.h"
 #include "pin_config.h"
-
+#include "delay.h"
 // °´¼üÂß¼­×´Ì¬¶¨Òå
 typedef enum {
     BTN_IDLE = 0,       // ¿ÕÏÐ×´Ì¬

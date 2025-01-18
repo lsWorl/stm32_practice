@@ -749,7 +749,7 @@ I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
 I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Library\misc.h)(0x4D783BB4)
 F (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)()
-F (.\User\main.c)(0x678A161C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\User\main.c)(0x678BB639)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\Start\stm32f10x.h)(0x4D783CB4)
 I (.\Start\core_cm3.h)(0x4D523B58)
 I (D:\Keil_stm32\ARM\ARMCC\include\stdint.h)(0x5F63877C)
@@ -781,10 +781,11 @@ I (.\Library\misc.h)(0x4D783BB4)
 I (.\Hardware\led.h)(0x6789E27A)
 I (.\Hardware\pin_config.h)(0x6789FB54)
 I (.\Hardware\OLED.h)(0x6773A07C)
-I (.\Middlewares\delay.h)(0x6789E786)
-I (.\Hardware\button.h)(0x6789F4AE)
+I (.\Middlewares\delay.h)(0x678B72F1)
+I (.\Hardware\button.h)(0x678B18B5)
 I (.\Hardware\beeper.h)(0x678A0F0E)
 I (.\Hardware\light_sensor.h)(0x678A1013)
+I (.\Hardware\temp_sensor.h)(0x678BB335)
 F (.\User\stm32f10x_conf.h)(0x4D99A59E)()
 F (.\User\stm32f10x_it.c)(0x678A08B0)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_it.o --omf_browse .\objects\stm32f10x_it.crf --depend .\objects\stm32f10x_it.d)
 I (User\stm32f10x_it.h)(0x678A08AC)
@@ -884,10 +885,10 @@ I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
 I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Library\misc.h)(0x4D783BB4)
 I (Hardware\pin_config.h)(0x6789FB54)
-I (.\Middlewares\delay.h)(0x6789E786)
+I (.\Middlewares\delay.h)(0x678B72F1)
 F (.\Hardware\beeper.h)(0x678A0F0E)()
-F (.\Hardware\button.c)(0x678A0B69)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\button.o --omf_browse .\objects\button.crf --depend .\objects\button.d)
-I (Hardware\button.h)(0x6789F4AE)
+F (.\Hardware\button.c)(0x678BB0FE)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\button.o --omf_browse .\objects\button.crf --depend .\objects\button.d)
+I (Hardware\button.h)(0x678B18B5)
 I (.\Start\stm32f10x.h)(0x4D783CB4)
 I (.\Start\core_cm3.h)(0x4D523B58)
 I (D:\Keil_stm32\ARM\ARMCC\include\stdint.h)(0x5F63877C)
@@ -917,9 +918,8 @@ I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
 I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Library\misc.h)(0x4D783BB4)
 I (Hardware\pin_config.h)(0x6789FB54)
-I (.\Middlewares\delay.h)(0x6789E786)
-I (Hardware\OLED.h)(0x6773A07C)
-F (.\Hardware\button.h)(0x6789F4AE)()
+I (.\Middlewares\delay.h)(0x678B72F1)
+F (.\Hardware\button.h)(0x678B18B5)()
 F (.\Hardware\encoder.c)(0x6789B974)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\encoder.o --omf_browse .\objects\encoder.crf --depend .\objects\encoder.d)
 F (.\Hardware\encoder.h)(0x6789B977)()
 F (.\Hardware\led.c)(0x6789EA0D)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
@@ -954,7 +954,7 @@ I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Library\misc.h)(0x4D783BB4)
 I (Hardware\pin_config.h)(0x6789FB54)
 F (.\Hardware\led.h)(0x6789E27A)()
-F (.\Hardware\light_sensor.c)(0x678A16DD)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\light_sensor.o --omf_browse .\objects\light_sensor.crf --depend .\objects\light_sensor.d)
+F (.\Hardware\light_sensor.c)(0x678BB29C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\light_sensor.o --omf_browse .\objects\light_sensor.crf --depend .\objects\light_sensor.d)
 I (Hardware\light_sensor.h)(0x678A1013)
 I (.\Start\stm32f10x.h)(0x4D783CB4)
 I (.\Start\core_cm3.h)(0x4D523B58)
@@ -989,20 +989,8 @@ F (.\Hardware\light_sensor.h)(0x678A1013)()
 F (.\Hardware\mpu6050.c)(0x6789B98B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\mpu6050.o --omf_browse .\objects\mpu6050.crf --depend .\objects\mpu6050.d)
 F (.\Hardware\mpu6050.h)(0x6789B990)()
 F (.\Hardware\pin_config.h)(0x6789FB54)()
-F (.\Hardware\temp_sensor.c)(0x6789B9AB)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\temp_sensor.o --omf_browse .\objects\temp_sensor.crf --depend .\objects\temp_sensor.d)
-F (.\Hardware\temp_sensor.h)(0x6789B9AE)()
-F (.\Middlewares\i2c.c)(0x6789BAF5)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\i2c.o --omf_browse .\objects\i2c.crf --depend .\objects\i2c.d)
-F (.\Middlewares\i2c.h)(0x6789BB05)()
-F (.\Middlewares\adc.c)(0x6789BB32)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\adc_1.o --omf_browse .\objects\adc_1.crf --depend .\objects\adc_1.d)
-F (.\Middlewares\adc.h)(0x6789BB3C)()
-F (.\Middlewares\pwm.c)(0x6789BB47)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\pwm.o --omf_browse .\objects\pwm.crf --depend .\objects\pwm.d)
-F (.\Middlewares\pwm.h)(0x6789BB50)()
-F (.\Middlewares\exti.c)(0x6789BB5A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\exti.o --omf_browse .\objects\exti.crf --depend .\objects\exti.d)
-F (.\Middlewares\exti.h)(0x6789BB6A)()
-F (.\Middlewares\gpio.c)(0x6789BB76)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\gpio.o --omf_browse .\objects\gpio.crf --depend .\objects\gpio.d)
-F (.\Middlewares\gpio.h)(0x6789BB7F)()
-F (.\Middlewares\delay.c)(0x6789E789)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\delay.o --omf_browse .\objects\delay.crf --depend .\objects\delay.d)
-I (Middlewares\delay.h)(0x6789E786)
+F (.\Hardware\temp_sensor.c)(0x678BB60C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\temp_sensor.o --omf_browse .\objects\temp_sensor.crf --depend .\objects\temp_sensor.d)
+I (Hardware\temp_sensor.h)(0x678BB335)
 I (.\Start\stm32f10x.h)(0x4D783CB4)
 I (.\Start\core_cm3.h)(0x4D523B58)
 I (D:\Keil_stm32\ARM\ARMCC\include\stdint.h)(0x5F63877C)
@@ -1031,7 +1019,50 @@ I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
 I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
 I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
 I (.\Library\misc.h)(0x4D783BB4)
-F (.\Middlewares\delay.h)(0x6789E786)()
+I (Hardware\pin_config.h)(0x6789FB54)
+I (D:\Keil_stm32\ARM\ARMCC\include\math.h)(0x5F63877C)
+F (.\Hardware\temp_sensor.h)(0x678BB335)()
+F (.\Middlewares\i2c.c)(0x6789BAF5)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\i2c.o --omf_browse .\objects\i2c.crf --depend .\objects\i2c.d)
+F (.\Middlewares\i2c.h)(0x6789BB05)()
+F (.\Middlewares\adc.c)(0x6789BB32)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\adc_1.o --omf_browse .\objects\adc_1.crf --depend .\objects\adc_1.d)
+F (.\Middlewares\adc.h)(0x6789BB3C)()
+F (.\Middlewares\pwm.c)(0x6789BB47)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\pwm.o --omf_browse .\objects\pwm.crf --depend .\objects\pwm.d)
+F (.\Middlewares\pwm.h)(0x6789BB50)()
+F (.\Middlewares\exti.c)(0x6789BB5A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\exti.o --omf_browse .\objects\exti.crf --depend .\objects\exti.d)
+F (.\Middlewares\exti.h)(0x6789BB6A)()
+F (.\Middlewares\gpio.c)(0x6789BB76)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\gpio.o --omf_browse .\objects\gpio.crf --depend .\objects\gpio.d)
+F (.\Middlewares\gpio.h)(0x6789BB7F)()
+F (.\Middlewares\delay.c)(0x678BAD97)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\delay.o --omf_browse .\objects\delay.crf --depend .\objects\delay.d)
+I (Middlewares\delay.h)(0x678B72F1)
+I (.\Start\stm32f10x.h)(0x4D783CB4)
+I (.\Start\core_cm3.h)(0x4D523B58)
+I (D:\Keil_stm32\ARM\ARMCC\include\stdint.h)(0x5F63877C)
+I (.\Start\system_stm32f10x.h)(0x4D783CAA)
+I (.\User\stm32f10x_conf.h)(0x4D99A59E)
+I (.\Library\stm32f10x_adc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_bkp.h)(0x4D783BB4)
+I (.\Library\stm32f10x_can.h)(0x4D783BB4)
+I (.\Library\stm32f10x_cec.h)(0x4D783BB4)
+I (.\Library\stm32f10x_crc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dac.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dbgmcu.h)(0x4D783BB4)
+I (.\Library\stm32f10x_dma.h)(0x4D783BB4)
+I (.\Library\stm32f10x_exti.h)(0x4D783BB4)
+I (.\Library\stm32f10x_flash.h)(0x4D783BB4)
+I (.\Library\stm32f10x_fsmc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_gpio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_i2c.h)(0x4D783BB4)
+I (.\Library\stm32f10x_iwdg.h)(0x4D783BB4)
+I (.\Library\stm32f10x_pwr.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rcc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_rtc.h)(0x4D783BB4)
+I (.\Library\stm32f10x_sdio.h)(0x4D783BB4)
+I (.\Library\stm32f10x_spi.h)(0x4D783BB4)
+I (.\Library\stm32f10x_tim.h)(0x4D783BB4)
+I (.\Library\stm32f10x_usart.h)(0x4D783BB4)
+I (.\Library\stm32f10x_wwdg.h)(0x4D783BB4)
+I (.\Library\misc.h)(0x4D783BB4)
+F (.\Middlewares\delay.h)(0x678B72F1)()
 F (.\Application\system.c)(0x6789DFB4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\system.o --omf_browse .\objects\system.crf --depend .\objects\system.d)
 F (.\Application\system.h)(0x6789DF84)()
 F (.\Application\menu.c)(0x6789BBB4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\Start -I .\Library -I .\User -I .\Hardware -I .\Middlewares -I .\Application-ID:\Keil_stm32\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-ID:\Keil_stm32\ARM\CMSIS\Include-D__UVISION_VERSION="532" -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\menu.o --omf_browse .\objects\menu.crf --depend .\objects\menu.d)

@@ -1,14 +1,12 @@
 #include "button.h"
 #include "delay.h"
-#include "OLED.h"
 
 // 按键参数定义
 #define BUTTON_SCAN_INTERVAL    20      // 扫描间隔（ms）
 #define LONG_PRESS_TIME         2000    // 长按时间（ms）
 #define DEBOUNCE_TIME          20       // 消抖时间（ms）
 
-// 定义全局变量
-volatile uint32_t sysTickCount;
+
 
 // 按键引脚定义
 static const uint16_t KEY_PINS[KEY_COUNT] = {
@@ -32,15 +30,7 @@ static struct {
     uint8_t isPressed;      // 按键是否处于按下状态
 } keyInfo[KEY_COUNT] = {BTN_IDLE, 0, 0};
 
-// 获取系统时间
-uint32_t GetTickCount(void) {
-    return sysTickCount;
-}
 
-// SysTick中断服务程序
-void SysTick_Handler(void) {
-    sysTickCount++;
-}
 
 /**
   * @brief  初始化按键GPIO
@@ -54,9 +44,6 @@ void Button_Init(void)
     NVIC_InitTypeDef NVIC_InitStructure;
     uint8_t i;
     
-    // 初始化系统滴答定时器，1ms中断一次
-    SysTick_Config(SystemCoreClock / 1000);
-    
     // 使能GPIO时钟
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_AFIO, ENABLE);
     
@@ -64,6 +51,7 @@ void Button_Init(void)
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
     
+    //逐一配置按键引脚
     for(i = 0; i < KEY_COUNT; i++)
     {
         GPIO_InitStructure.GPIO_Pin = KEY_PINS[i];
@@ -78,8 +66,8 @@ void Button_Init(void)
     GPIO_EXTILineConfig(GPIO_PortSourceGPIOB, GPIO_PinSource1);  // KEY_ALARM
     GPIO_EXTILineConfig(GPIO_PortSourceGPIOB, GPIO_PinSource12); // KEY_RESET
     
-    EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
-    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;
+    EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;         // 中断模式
+    EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;     // 下降沿触发
     EXTI_InitStructure.EXTI_LineCmd = ENABLE;
     
     EXTI_InitStructure.EXTI_Line = EXTI_Line5;  // KEY_MODE
@@ -95,7 +83,7 @@ void Button_Init(void)
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-    
+    // 配置中断通道
     NVIC_InitStructure.NVIC_IRQChannel = EXTI9_5_IRQn;   // KEY_MODE, KEY_CONFIRM
     NVIC_Init(&NVIC_InitStructure);
     NVIC_InitStructure.NVIC_IRQChannel = EXTI1_IRQn;     // KEY_ALARM
@@ -105,7 +93,7 @@ void Button_Init(void)
 }
 
 /**
-  * @brief  按键扫描处理
+  * @brief  按键扫描处理 主要用于按键状态的更新
   * @param  None
   * @retval None
   */
@@ -114,32 +102,33 @@ void Button_Scan(void)
     static uint32_t lastScanTime = 0;
     uint32_t currentTime;
     uint8_t i;
-    
     currentTime = GetTickCount();
     
-    // 按扫描间隔进行处理
+    // 按扫描间隔进行处理 小于扫描间隔则不处理
     if(currentTime - lastScanTime < BUTTON_SCAN_INTERVAL)
         return;
-    
+
+    // 更新扫描时间
     lastScanTime = currentTime;
     
     for(i = 0; i < KEY_COUNT; i++)
     {
+        // 读取按键状态
         uint8_t pinState = GPIO_ReadInputDataBit(KEY_PORTS[i], KEY_PINS[i]);
         
         if(pinState == 0) // 按键按下
         {
-            if(!keyInfo[i].isPressed)
+            if(!keyInfo[i].isPressed) //isPressed为0表示按键未按下
             {
                 keyInfo[i].isPressed = 1;
                 keyInfo[i].pressTime = currentTime;
                 keyInfo[i].state = BTN_DEBOUNCE;
             }
-            else if(keyInfo[i].state == BTN_DEBOUNCE)
+            else if(keyInfo[i].state == BTN_DEBOUNCE) // 按键处于消抖状态
             {
-                if(currentTime - keyInfo[i].pressTime >= LONG_PRESS_TIME)
+                if(currentTime - keyInfo[i].pressTime >= LONG_PRESS_TIME) // 按键按下时间大于长按时间
                 {
-                    keyInfo[i].state = BTN_LONG_PRESS;
+                    keyInfo[i].state = BTN_LONG_PRESS; // 按键状态设置为长按状态
                 }
             }
         }

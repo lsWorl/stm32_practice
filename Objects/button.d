@@ -31,4 +31,3 @@
 .\objects\button.o: .\Library\misc.h
 .\objects\button.o: Hardware\pin_config.h
 .\objects\button.o: .\Middlewares\delay.h
-.\objects\button.o: Hardware\OLED.h

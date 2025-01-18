@@ -25,25 +25,25 @@ void LightSensor_Init(void)
 
   // ADC1配置
   ADC_DeInit(ADC1);
-  ADC_InitStructure.ADC_Mode = ADC_Mode_Independent;
-  ADC_InitStructure.ADC_ScanConvMode = DISABLE;
-  ADC_InitStructure.ADC_ContinuousConvMode = DISABLE;
-  ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
-  ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
+  ADC_InitStructure.ADC_Mode = ADC_Mode_Independent;    // 独立模式
+  ADC_InitStructure.ADC_ScanConvMode = DISABLE;         // 单通道模式
+  ADC_InitStructure.ADC_ContinuousConvMode = DISABLE;  // 单次转换模式
+  ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None; // 外部触发模式
+  ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right; // 数据对齐
   ADC_InitStructure.ADC_NbrOfChannel = 1;
   ADC_Init(ADC1, &ADC_InitStructure);
 
   // 配置ADC通道和采样时间
-  ADC_RegularChannelConfig(ADC1, ADC_Channel_0, 1, ADC_SampleTime_239Cycles5);
+  ADC_RegularChannelConfig(ADC1, ADC_Channel_0, 1, ADC_SampleTime_239Cycles5); // 配置ADC通道和采样时间
 
   // 使能ADC1
   ADC_Cmd(ADC1, ENABLE);
 
   // ADC校准
-  ADC_ResetCalibration(ADC1);
+  ADC_ResetCalibration(ADC1); // 复位校准
   while (ADC_GetResetCalibrationStatus(ADC1))
     ;
-  ADC_StartCalibration(ADC1);
+  ADC_StartCalibration(ADC1); // 开始校准
   while (ADC_GetCalibrationStatus(ADC1))
     ;
 }

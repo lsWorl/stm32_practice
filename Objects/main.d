@@ -35,3 +35,4 @@
 .\objects\main.o: .\Hardware\button.h
 .\objects\main.o: .\Hardware\beeper.h
 .\objects\main.o: .\Hardware\light_sensor.h
+.\objects\main.o: .\Hardware\temp_sensor.h
