@@ -18,7 +18,7 @@ static const uint16_t KEY_PINS[KEY_COUNT] = {
 
 static GPIO_TypeDef* const KEY_PORTS[KEY_COUNT] = {
     GPIOA,      // KEY_MODE  (PA5)
-    GPIOA,      // KEY_CONFIRM (PA7)
+    GPIOB,      // KEY_CONFIRM (PB0)
     GPIOB,      // KEY_ALARM (PB1)
     GPIOB       // KEY_RESET (PB12)
 };
@@ -62,7 +62,7 @@ void Button_Init(void)
     
     // 配置EXTI中断
     GPIO_EXTILineConfig(GPIO_PortSourceGPIOA, GPIO_PinSource5);  // KEY_MODE
-    GPIO_EXTILineConfig(GPIO_PortSourceGPIOA, GPIO_PinSource7);  // KEY_CONFIRM
+    GPIO_EXTILineConfig(GPIO_PortSourceGPIOB, GPIO_PinSource0);  // KEY_CONFIRM
     GPIO_EXTILineConfig(GPIO_PortSourceGPIOB, GPIO_PinSource1);  // KEY_ALARM
     GPIO_EXTILineConfig(GPIO_PortSourceGPIOB, GPIO_PinSource12); // KEY_RESET
     
@@ -72,7 +72,7 @@ void Button_Init(void)
     
     EXTI_InitStructure.EXTI_Line = EXTI_Line5;  // KEY_MODE
     EXTI_Init(&EXTI_InitStructure);
-    EXTI_InitStructure.EXTI_Line = EXTI_Line7;  // KEY_CONFIRM
+    EXTI_InitStructure.EXTI_Line = EXTI_Line0;  // KEY_CONFIRM
     EXTI_Init(&EXTI_InitStructure);
     EXTI_InitStructure.EXTI_Line = EXTI_Line1;  // KEY_ALARM
     EXTI_Init(&EXTI_InitStructure);
@@ -84,8 +84,9 @@ void Button_Init(void)
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     // 配置中断通道
-    NVIC_InitStructure.NVIC_IRQChannel = EXTI9_5_IRQn;   // KEY_MODE, KEY_CONFIRM
+    NVIC_InitStructure.NVIC_IRQChannel = EXTI9_5_IRQn;   // KEY_MODE
     NVIC_Init(&NVIC_InitStructure);
+    NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;     // KEY_CONFIRM
     NVIC_InitStructure.NVIC_IRQChannel = EXTI1_IRQn;     // KEY_ALARM
     NVIC_Init(&NVIC_InitStructure);
     NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn; // KEY_RESET
@@ -185,12 +186,12 @@ void EXTI9_5_IRQHandler(void)
         keyInfo[KEY_MODE].isPressed = 1;
         EXTI_ClearITPendingBit(EXTI_Line5);
     }
-    if(EXTI_GetITStatus(EXTI_Line7) != RESET)  // KEY_CONFIRM
+    if(EXTI_GetITStatus(EXTI_Line0) != RESET)  // KEY_CONFIRM
     {
         keyInfo[KEY_CONFIRM].pressTime = GetTickCount();
         keyInfo[KEY_CONFIRM].state = BTN_DEBOUNCE;
         keyInfo[KEY_CONFIRM].isPressed = 1;
-        EXTI_ClearITPendingBit(EXTI_Line7);
+        EXTI_ClearITPendingBit(EXTI_Line0);
     }
 }
 

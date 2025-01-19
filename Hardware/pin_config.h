@@ -7,8 +7,8 @@
 #define OLED_PORT           GPIOB  // OLED引脚所在的端口
 
 //MPU6050引脚
-#define MPU6050_SDA_PIN     GPIO_Pin_10  // PB10
-#define MPU6050_SCL_PIN     GPIO_Pin_11  // PB11
+#define MPU6050_SDA_PIN     GPIO_Pin_11  // PB11
+#define MPU6050_SCL_PIN     GPIO_Pin_10  // PB10
 #define MPU6050_PORT        GPIOB  // MPU6050引脚所在的端口
 
 // 光敏传感器引脚
@@ -23,9 +23,8 @@
 #define BEEPER_PIN          GPIO_Pin_2  // PA2
 #define BEEPER_PORT         GPIOA
 // 编码器引脚
-#define ENCODER_A_PIN       GPIO_Pin_3  // PA3
-#define ENCODER_B_PIN       GPIO_Pin_4  // PA4
-#define ENCODER_PORT        GPIOA  // 编码器引脚所在的端口
+#define ENCODER_A_PIN       GPIO_Pin_6  // PA6 TIM3_CH1
+#define ENCODER_B_PIN       GPIO_Pin_7  // PA7 TIM3_CH2
 
 // 舵机引脚
 #define SERVO_PWM_PIN       GPIO_Pin_8  // PA8
@@ -40,7 +39,7 @@
 
 // 按钮引脚
 #define BTN1_PIN            GPIO_Pin_5  // PA5
-#define BTN2_PIN            GPIO_Pin_7  // PA7
+#define BTN2_PIN            GPIO_Pin_0  // PB0
 #define BTN3_PIN            GPIO_Pin_1  // PB1
 #define BTN4_PIN            GPIO_Pin_12  // PB12
 

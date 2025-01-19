@@ -34,5 +34,6 @@
 .\objects\main.o: .\Middlewares\delay.h
 .\objects\main.o: .\Hardware\button.h
 .\objects\main.o: .\Hardware\beeper.h
-.\objects\main.o: .\Hardware\light_sensor.h
-.\objects\main.o: .\Hardware\temp_sensor.h
+.\objects\main.o: .\Hardware\mpu6050.h
+.\objects\main.o: .\Hardware\encoder.h
+.\objects\main.o: D:\Keil_stm32\ARM\ARMCC\Bin\..\include\stdlib.h
