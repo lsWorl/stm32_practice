@@ -65,7 +65,7 @@ void Encoder_Init(void)
 EncoderState Encoder_GetState(void)
 {
   // diff为编码器计数差值
-  int16_t diff = encoder.count - encoder.lastCount;
+  int16_t diff = Encoder_GetCount() - encoder.lastCount;
   // 如果按钮状态为1，则为按下按钮
   if (encoder.buttonState)
     return ENCODER_PUSH;

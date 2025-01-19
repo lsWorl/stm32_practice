@@ -55,6 +55,9 @@ void LightSensor_Init(void)
  */
 uint16_t LightSensor_GetValue(void)
 {
+  //配置ADC通道为PA0
+  ADC_RegularChannelConfig(ADC1, ADC_Channel_0, 1, ADC_SampleTime_239Cycles5);
+  
   // 启动ADC转换
   ADC_SoftwareStartConvCmd(ADC1, ENABLE);
   // 等待转换完成

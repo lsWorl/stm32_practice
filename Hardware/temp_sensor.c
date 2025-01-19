@@ -60,6 +60,9 @@ void TempSensor_Init(void)
   */
 uint16_t TempSensor_GetADC(void)
 {
+    //配置ADC通道为PA1
+    ADC_RegularChannelConfig(ADC1, ADC_Channel_1, 1, ADC_SampleTime_239Cycles5);
+    
     // 启动ADC转换
     ADC_SoftwareStartConvCmd(ADC1, ENABLE);
     // 等待转换完成

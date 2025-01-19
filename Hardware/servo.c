@@ -36,12 +36,12 @@ void Servo_Init(void)
     // 配置PWM模式
     TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
     TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
-    TIM_OCInitStructure.TIM_OutputNState = TIM_OutputNState_Disable;
+    TIM_OCInitStructure.TIM_OutputNState = TIM_OutputNState_Disable;  // 互补输出被禁用
     TIM_OCInitStructure.TIM_Pulse = SERVO_MID_PULSE;  // 初始化到中间位置
-    TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
-    TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPolarity_Low;
-    TIM_OCInitStructure.TIM_OCIdleState = TIM_OCIdleState_Set;
-    TIM_OCInitStructure.TIM_OCNIdleState = TIM_OCNIdleState_Reset;
+    TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High; 
+    TIM_OCInitStructure.TIM_OCNPolarity = TIM_OCNPolarity_Low; //由于互补输出被禁用，此配置在舵机控制中不会生效
+    TIM_OCInitStructure.TIM_OCIdleState = TIM_OCIdleState_Set;  //配置主输出通道（TIM1_CH1） 空闲状态时输出高电平
+    TIM_OCInitStructure.TIM_OCNIdleState = TIM_OCNIdleState_Reset; //配置 互补输出通道 空闲状态
     TIM_OC1Init(TIM1, &TIM_OCInitStructure);
     
     // 使能预装载
@@ -50,7 +50,7 @@ void Servo_Init(void)
     
     // 使能TIM1
     TIM_Cmd(TIM1, ENABLE);
-    TIM_CtrlPWMOutputs(TIM1, ENABLE);
+    TIM_CtrlPWMOutputs(TIM1, ENABLE); //用于控制是否启用高级定时器的PWM输出
     
     // 复位到中间位置
     Servo_Reset();
