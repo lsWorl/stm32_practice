@@ -25,6 +25,7 @@
 ### 3.1 硬件驱动层
 ```
 Hardware/
+├── pinconfig.c
 ├── OLED.c
 ├── OLED.h
 ├── OLED_Font.h
@@ -51,29 +52,15 @@ Hardware/
 Middlewares/
 ├── i2c.c
 ├── i2c.h
-├── adc.c
-├── adc.h
-├── pwm.c
-├── pwm.h
-├── exti.c
-├── exti.h
-├── gpio.c
-└── gpio.h
+├── delay.c
+└── delay.h
 ```
 
 ### 3.3 应用层
 ```
 Application/
 ├── system.c
-├── system.h
-├── menu.c
-├── menu.h
-├── alarm.c
-├── alarm.h
-├── control.c
-├── control.h
-├── indicator.c
-└── indicator.h
+└── system.h
 ```
 
 ### 3.4 主程序
@@ -125,7 +112,7 @@ User/
 | BTN1     | 模式切换（短按）             |
 | BTN2     | 参数确认/选择（短按）        |
 | BTN3     | 报警确认（短按）             |
-| BTN4     | 系统复位（长按3秒）          |
+| BTN4     | 系统复位（短按）          |
 
 ## 7. 系统工作流程
 1. 上电初始化

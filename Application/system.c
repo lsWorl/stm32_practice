@@ -82,8 +82,6 @@ void System_Process(void)
   // 更新显示
   System_UpdateDisplay();
 
-  // 舵机转动
-  Servo_Running();
 
   // 系统运行指示
   LED_SystemRunning();
@@ -183,6 +181,8 @@ void System_CheckAlarm(void)
     if (!systemState.isAlarming)
     {
       systemState.isAlarming = 1;
+      // 舵机转动
+      Servo_Running();
       Beeper_Beep(500); // 蜂鸣器报警
     }
     LED_AlarmStatus(); // LED闪烁

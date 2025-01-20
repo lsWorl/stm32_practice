@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\demo.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\demo.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Jan 20 10:57:30 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Jan 20 12:55:50 2025
 <BR><P>
 <H3>Maximum Stack Usage =        192 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -85,8 +85,8 @@ Function Pointers
 Global Symbols
 </H3>
 <P><STRONG><a name="[3a]"></a>__main</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, __main.o(!!!main))
-<BR><BR>[Calls]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
-<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
+<BR><BR>[Calls]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
+<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
 <P><STRONG><a name="[3b]"></a>__scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter))
@@ -365,9 +365,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_errno_addr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;log
+<BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrtf
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;log
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2f
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrtf
 </UL>
 
 <P><STRONG><a name="[4b]"></a>__aeabi_errno_addr</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, rt_errno_addr_intlibspace.o(.text))
@@ -936,13 +936,13 @@ Global Symbols
 <P><STRONG><a name="[90]"></a>MPU6050_GetAttitude</STRONG> (Thumb, 176 bytes, Stack size 48 bytes, mpu6050.o(i.MPU6050_GetAttitude))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = MPU6050_GetAttitude &rArr; MPU6050_GetData &rArr; I2C_ReadMultBytes &rArr; I2C_ReadByte &rArr; I2C_NAck &rArr; SDA_OUT &rArr; GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2f
+<BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrtf
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atan2f
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2f
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU6050_GetData
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sqrtf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Process
 </UL>
@@ -1190,7 +1190,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo_SetAngle
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_Process
+<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_CheckAlarm
 </UL>
 
 <P><STRONG><a name="[b0]"></a>Servo_SetAngle</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, servo.o(i.Servo_SetAngle))
@@ -1218,10 +1218,11 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(.text)
 </UL>
-<P><STRONG><a name="[b6]"></a>System_CheckAlarm</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, system.o(i.System_CheckAlarm))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = System_CheckAlarm &rArr; Beeper_Beep &rArr; Beeper_On
+<P><STRONG><a name="[b6]"></a>System_CheckAlarm</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, system.o(i.System_CheckAlarm))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = System_CheckAlarm &rArr; Servo_Running &rArr; Servo_SetAngle
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo_Running
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Off
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_AlarmStatus
 <LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Beeper_Beep
@@ -1271,13 +1272,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[bf]"></a>System_Process</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, system.o(i.System_Process))
+<P><STRONG><a name="[bf]"></a>System_Process</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, system.o(i.System_Process))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = System_Process &rArr; TempSensor_GetTemp &rArr; log &rArr; __kernel_poly &rArr; __aeabi_dmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_UpdateDisplay
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_HandleInput
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;System_CheckAlarm
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Servo_Running
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TempSensor_GetTemp
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU6050_GetAttitude
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LightSensor_GetPercent
@@ -1484,7 +1484,8 @@ Global Symbols
 <P><STRONG><a name="[97]"></a>atan2f</STRONG> (Thumb, 598 bytes, Stack size 32 bytes, atan2f.o(i.atan2f))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = atan2f &rArr; __aeabi_fmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
@@ -1492,7 +1493,6 @@ Global Symbols
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_flt_underflow
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_flt_infnan2
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_fpclassifyf
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 </UL>
 <BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU6050_GetAttitude
 </UL>
@@ -1528,7 +1528,8 @@ Global Symbols
 <P><STRONG><a name="[cf]"></a>log</STRONG> (Thumb, 808 bytes, Stack size 96 bytes, log.o(i.log))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = log &rArr; __kernel_poly &rArr; __aeabi_dmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
+<BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__kernel_poly
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_invalid
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_infnan
 <LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_divzero
@@ -1540,7 +1541,6 @@ Global Symbols
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
 <LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TempSensor_GetTemp
 </UL>
@@ -1558,8 +1558,8 @@ Global Symbols
 <P><STRONG><a name="[96]"></a>sqrtf</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, sqrtf.o(i.sqrtf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = sqrtf &rArr; _fsqrt &rArr; __fpl_fnaninf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fsqrt
-<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
+<BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
+<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fsqrt
 </UL>
 <BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MPU6050_GetAttitude
 </UL>
