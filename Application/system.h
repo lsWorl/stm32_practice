@@ -41,7 +41,7 @@ void System_SetMode(SystemMode mode);      // 设置系统模式
 void System_UpdateDisplay(void);           // 更新显示
 void System_CheckAlarm(void);             // 检查报警条件
 void System_HandleInput(void);             // 处理用户输入
-
+void Servo_Running(void);                   // 超过阈值，则转动舵机
 // 获取系统状态
 SystemState* System_GetState(void);
 

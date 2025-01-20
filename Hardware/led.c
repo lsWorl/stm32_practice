@@ -87,7 +87,6 @@ void LED_SystemRunning(void)
 {
     LED_Toggle(LED1_PIN);
 }
-
 /**
   * @brief  数据采集指示（LED2）
   * @param  None
